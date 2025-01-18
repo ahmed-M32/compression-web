@@ -140,64 +140,60 @@ input[type="text"]{
 }
 
 
-/* General Styles for the Select Element */
 select {
-    width: 250px; /* Adjust width */
-    padding: 10px 20px; /* Padding for the select box */
-    font-size: 16px; /* Font size */
-    font-family: 'Arial', sans-serif; /* Font family */
-    border: 2px solid #ddd; /* Light border */
-    border-radius: 8px; /* Rounded corners */
-    background-color: #fff; /* Background color */
-    color: #333; /* Text color */
-    cursor: pointer; /* Cursor style */
-    appearance: none; /* Remove default dropdown arrow */
-    -webkit-appearance: none; /* Safari */
-    -moz-appearance: none; /* Firefox */
-    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    width: 250px; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    font-family: 'Arial', sans-serif; 
+    border: 2px solid #ddd; 
+    border-radius: 8px; 
+    background-color: #fff; 
+    color: #333; 
+    cursor: pointer; 
+    appearance: none; 
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; 
 }
 
 select:focus {
-    border-color:#4CAF50; /* Blue border when focused */
-    outline: none; /* Remove outline */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Light blue shadow */
+    border-color:#4CAF50; 
+    outline: none; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
 }
 
-/* Custom Dropdown Arrow */
 .select-wrapper {
     position: relative;
     display: inline-block;
 }
 
 .select-wrapper::after {
-    content: '▼'; /* Custom down arrow */
-    font-size: 18px; /* Arrow size */
-    color: #333; /* Arrow color */
+    content: '▼'; 
+    font-size: 18px; 
+    color: #333; 
     position: absolute;
-    right: 10px; /* Position on the right */
+    right: 10px; 
     top: 50%;
-    transform: translateY(-50%); /* Center the arrow vertically */
-    pointer-events: none; /* Prevent the arrow from blocking clicks */
+    transform: translateY(-50%); 
+    pointer-events: none; 
 }
 
-/* Style the options inside the select element */
+
 select option {
     padding: 10px;
-    background-color: #fff; /* Option background */
-    color: #333; /* Option text color */
-    font-size: 16px; /* Option font size */
-    transition: background-color 0.3s ease; /* Smooth transition */
+    background-color: #fff; 
+    color: #333; 
+    font-size: 16px; 
+    transition: background-color 0.3s ease; 
 }
 
-/* Change option background color on hover */
 select option:hover {
-    background-color: #f0f0f0; /* Light hover effect */
+    background-color: #f0f0f0; 
 }
 
-/* Disabled option styling */
 select option:disabled {
-    color: #aaa; /* Grey text */
-    background-color: #f7f7f7; /* Lighter background */
+    color: #aaa; 
+    background-color: #f7f7f7; 
 }
 .output{
     color: #333;

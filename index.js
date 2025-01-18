@@ -3,7 +3,10 @@ let select = selection.value;
 let currentAlgo ="lz77";
 
 
-
+selection.addEventListener("change", function() {
+    select = selection.value;
+    currentAlgo = select;
+});
 selection.addEventListener("change", function() {
     select = selection.value;
     currentAlgo = select;
@@ -87,29 +90,32 @@ compressButton.addEventListener("click", () => {
         outputElement.textContent = JSON.stringify(compressed);
     }
 });
+
+
+
 function lz78Compress(input) {
-    let dictionary = {}; // To store previously encountered substrings
-    let output = []; // The resulting compressed output (array of [index, char] pairs)
-    let nextIndex = 1; // The next available index in the dictionary
-    let currentSubstring = ""; // The current substring we are processing
+    let dictionary = {}; 
+    let output = []; 
+    let nextIndex = 1; 
+    let currentSubstring = "";
 
     for (let i = 0; i < input.length; i++) {
-        currentSubstring += input[i]; // Add the current character to the substring
+        currentSubstring += input[i]; 
         
-        // Check if the current substring exists in the dictionary
+        
         if (!(currentSubstring in dictionary)) {
-            // If not, add the current substring to the dictionary
+            
             if (currentSubstring.length === 1) {
-                output.push([0, currentSubstring]); // If it's just a single character, no reference
+                output.push([0, currentSubstring]); 
             } else {
                 output.push([dictionary[currentSubstring.slice(0, -1)] || 0, currentSubstring.slice(-1)]); 
-                // If it's more than one character, push the (index, character)
+              
             }
-            dictionary[currentSubstring] = nextIndex++; // Add the current substring to the dictionary
-            currentSubstring = ""; // Reset the current substring to process the next character
+            dictionary[currentSubstring] = nextIndex++; 
+            currentSubstring = ""; 
         }
     }
-    // Handle any leftover substring at the end (if any)
+   
     if (currentSubstring.length > 0) {
         output.push([dictionary[currentSubstring.slice(0, -1)] || 0, currentSubstring.slice(-1)]);
     }
@@ -118,29 +124,24 @@ function lz78Compress(input) {
 }
 
 
-function lz78Decompress(input) {
-    let dictionary = {};
-    let data = input;
-    let currentChar = String.fromCharCode(data[0]);
-    let oldPhrase = currentChar;
-    let out = [currentChar];
-    let code = 256;
-    let phrase;
-    for (let i = 1; i < data.length; i++) {
-        let currCode = data[i];
-        if (currCode < 256) {
-            phrase = String.fromCharCode(data[i]);
+function lz78Decompress(compressed) {
+    let dictionary = [];
+    let output = "";
+
+    compressed.forEach(([index, char]) => {
+        if (index === 0) {
+            output += char;
+            dictionary.push(char);
         } else {
-            phrase = dictionary[currCode] ? dictionary[currCode] : (oldPhrase + currentChar);
+            let newSubstring = dictionary[index - 1] + char;
+            output += newSubstring;
+            dictionary.push(newSubstring);
         }
-        out.push(phrase);
-        currentChar = phrase.charAt(0);
-        dictionary[code] = oldPhrase + currentChar;
-        code++;
-        oldPhrase = phrase;
-    }
-    return out.join("");
+    });
+
+    return output;
 }
+
 
 function lzwCompress(input) {
     let dictionary = {};
