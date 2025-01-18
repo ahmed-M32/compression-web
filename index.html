@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Compression</title>
+        <link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+		<div class="main">
+			<nav>
+				<divl class="title"> Text Compression </divl>
+				<div class="choices">
+					<div class="comp-button choice active-mode">compression</div>
+					<div class="decomp-button choice">decompression</div>
+				</div>
+                <div class="algorithm-choice">
+                    <select name="" id="">
+                        <option value="lz77">lz77</option>
+                        <option value="lz78">lz78</option>
+                        <option value="lzw">lzw</option>
+                    </select>
+                </div>
+			</nav>
+			<div class="container compression-mode">
+				<div class="compress">
+                    <div class="process-container">
+                        <div class="input box">
+                            <input type="text" class="input-box" placeholder="Enter text to compress" />
+                        </div>
+                        <div class="button">
+                            Compress
+                        </div>
+                        <div class="output box">
+                            <div class="output-area">Compressed text</div>
+                        </div>
+                    </div>
+                </div>
+				<div class="decompress">
+                    <div class="process-container">
+                        <div class="input box">
+                            <input type="text" class="input-box" placeholder="Enter text to decompress" />
+                        </div>
+                        <div class="button">
+                            decompress
+                        </div>
+                        <div class="output box">
+                            <div class="output-area">Decompressed text</div>
+                        </div>
+                    </div>
+                </div>
+			</div>
+		</div>
+		<script type="module" src="./index.js"></script>
+	</body>
+</html>
