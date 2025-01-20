@@ -12,11 +12,12 @@
 				<divl class="title"> Text Compression </divl>
 				<div class="choices">
 					<div class="comp-button choice active-mode">compression</div>
-					<div class="decomp-button choice">decompression</div>
+                    <div class="switch">Switch</div>
+					<div class="decomp-button choice inactive-mode">decompression</div>
 				</div>
                 <div class="algorithm-choice">
                     <select name="" id="">
-                        <option value="lz77">lz77</option>
+                        <option value="lz77" selected>lz77</option>
                         <option value="lz78">lz78</option>
                         <option value="lzw">lzw</option>
                     </select>
@@ -26,9 +27,9 @@
 				<div class="compress">
                     <div class="process-container">
                         <div class="input box">
-                            <input type="text" class="input-box" placeholder="Enter text to compress" />
+                            <input type="text" class="input-box input-box-1" placeholder="Enter text to compress" />
                         </div>
-                        <div class="button">
+                        <div class="button button-1">
                             Compress
                         </div>
                         <div class="output box">
@@ -39,13 +40,13 @@
 				<div class="decompress">
                     <div class="process-container">
                         <div class="input box">
-                            <input type="text" class="input-box" placeholder="Enter text to decompress" />
+                            <input type="text" class="input-box input-box-2" placeholder="Enter text to decompress" />
                         </div>
-                        <div class="button">
+                        <div class="button button-2">
                             decompress
                         </div>
                         <div class="output box">
-                            <div class="output-area">Decompressed text</div>
+                            <div class="output-area output-area-2">Decompressed text</div>
                         </div>
                     </div>
                 </div>
