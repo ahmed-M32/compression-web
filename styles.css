@@ -45,8 +45,8 @@ nav {
 	width: 100%;
 	color: white;
 	text-align: center;
-	font-size: 24px;
-	display: flex;
+	font-size: clamp(5px, 3vw, 25px);
+		display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
@@ -213,4 +213,7 @@ select option:disabled {
 	width: 70%;
 	min-height: 40%;
 	height: fit-content;
+}
+.switch{
+	cursor: pointer;
 }
