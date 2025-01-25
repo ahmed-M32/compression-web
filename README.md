@@ -7,3 +7,6 @@
 ### - LZ77
 ### - LZ88
 ### - LZW
+## Functionalities
+### - text compression
+### - text decompression
